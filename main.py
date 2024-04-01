@@ -1,8 +1,9 @@
 # main.py
-from environment import Environment
+from environment import Environment, OBSTACLE
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search
 from visualization import print_grid, visualize_path, visualize_grid
+
 
 # Initialize the environment
 grid_size = (10, 10)
