@@ -55,15 +55,18 @@ def visualize_grid(grid, path=None):
         for y in range(cols):
             cell_value = grid[x][y]
             if cell_value == -1:
-                ax.add_patch(plt.Rectangle((y, rows - x - 1), 1, 1, facecolor='black'))  # Obstacle
+                ax.add_patch(plt.Rectangle((y, x), 1, 1, facecolor='black'))  # Obstacle
             elif cell_value == 1:
-                ax.add_patch(plt.Circle((y + 0.5, rows - x - 0.5), 0.3, facecolor='green'))  # Robot
+                ax.add_patch(plt.Circle((y + 0.5, x + 0.5), 0.3, facecolor='green'))  # Robot
             elif cell_value == 2:
-                ax.add_patch(plt.Circle((y + 0.5, rows - x - 0.5), 0.3, facecolor='red'))  # Target
+                ax.add_patch(plt.Circle((y + 0.5, x + 0.5), 0.3, facecolor='red'))  # Target
 
     if path:
+        print("Plotting path:", path)  # Added for debugging
         path_x = [y for x, y in path]
-        path_y = [rows - x - 1 for x, y in path]
+        path_y = [x for x, y in path]  # Updated to plot correctly
+        print("Path x-coordinates:", path_x)  # Added for debugging
+        print("Path y-coordinates:", path_y)  # Added for debugging
         ax.plot(path_x, path_y, 'b--', linewidth=2)  # Plot the path
 
     ax.set_xticks(range(cols))
