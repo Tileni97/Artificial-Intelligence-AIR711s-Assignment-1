@@ -23,7 +23,7 @@ path, cost = a_star_search(env.grid, start_pos, goal_pos, lambda pos1, pos2: obs
 print("\nPath (Obstacle-aware heuristic):", path)
 print("Total cost (Obstacle-aware heuristic):", cost)
 
-# Visualize the environment and the planned path
+# Visualizes the environment and the planned path
 print("\nInitial environment:")
 print_grid(env.grid)
 visualize_path(env.grid, path)
