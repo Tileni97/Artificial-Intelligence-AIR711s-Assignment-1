@@ -1,11 +1,4 @@
 # test_heuristics.py
-from pathlib import Path
-import sys
-
-# Add the parent directory to the system path
-project_root = Path(__file__).resolve().parent.parent
-sys.path.append(str(project_root))
-
 from environment import Environment, OBSTACLE, FLOOR, ROBOT, TARGET
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search
@@ -27,18 +20,36 @@ def run_test_case(grid, robot_pos, target_pos):
 
 def test_heuristics():
     # Test Case 1
-    grid = [
+    grid1 = [
         [FLOOR, FLOOR, OBSTACLE, FLOOR],
         [FLOOR, FLOOR, FLOOR, FLOOR],
         [OBSTACLE, FLOOR, FLOOR, FLOOR],
         [FLOOR, FLOOR, FLOOR, FLOOR]
     ]
-    robot_pos = (0, 0)
-    target_pos = (3, 3)
-    run_test_case(grid, robot_pos, target_pos)
+    robot_pos1 = (0, 0)
+    target_pos1 = (3, 3)
+    run_test_case(grid1, robot_pos1, target_pos1)
 
-    # Test Case 2 (Add more test cases as needed)
-    # ...
+    # Test Case 2
+    grid2 = [
+        [ROBOT, OBSTACLE, FLOOR],
+        [FLOOR, FLOOR, FLOOR],
+        [FLOOR, FLOOR, TARGET]
+    ]
+    robot_pos2 = (0, 0)
+    target_pos2 = (2, 2)
+    run_test_case(grid2, robot_pos2, target_pos2)
+
+    # Test Case 3
+    grid3 = [
+        [FLOOR, OBSTACLE, OBSTACLE, FLOOR],
+        [FLOOR, FLOOR, FLOOR, OBSTACLE],
+        [ROBOT, OBSTACLE, FLOOR, FLOOR],
+        [FLOOR, FLOOR, FLOOR, TARGET]
+    ]
+    robot_pos3 = (0, 0)
+    target_pos3 = (3, 3)
+    run_test_case(grid3, robot_pos3, target_pos3)
 
 if __name__ == "__main__":
     test_heuristics()
