@@ -11,7 +11,7 @@ robot_pos = (0, 0)
 target_pos = (9, 9)
 env = Environment(grid_size, obstacles, robot_pos, target_pos)
 
-# Test with the Manhattan distance heuristic
+# Test with the Manhattan distance heuristic method
 start_pos = robot_pos
 goal_pos = target_pos
 path, cost = a_star_search(env.grid, start_pos, goal_pos, manhattan_distance)
