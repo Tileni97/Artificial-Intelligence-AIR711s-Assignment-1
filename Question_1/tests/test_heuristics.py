@@ -2,6 +2,7 @@
 from environment import Environment, OBSTACLE, FLOOR, ROBOT, TARGET
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search
+from pathfinding import manhattan_distance, obstacle_aware_heuristic
 
 def run_test_case(grid, robot_pos, target_pos):
     env = Environment(grid_size=(len(grid), len(grid[0])), obstacles=[], robot_pos=robot_pos, target_pos=target_pos)

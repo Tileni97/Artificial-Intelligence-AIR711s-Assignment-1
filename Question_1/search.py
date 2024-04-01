@@ -1,5 +1,6 @@
 # search.py
 from collections import deque
+from pathfinding import manhattan_distance, obstacle_aware_heuristic
 
 def a_star_search(grid, start, goal, heuristic):
     open_set = deque([(start, 0, heuristic(start, goal))])
