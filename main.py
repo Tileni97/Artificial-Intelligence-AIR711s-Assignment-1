@@ -2,6 +2,7 @@
 from environment import Environment
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search
+from visualization import print_grid, visualize_path, visualize_grid
 
 # Initialize the environment
 grid_size = (10, 10)
@@ -21,3 +22,9 @@ print("Total cost (Manhattan distance heuristic):", cost)
 path, cost = a_star_search(env.grid, start_pos, goal_pos, lambda pos1, pos2: obstacle_aware_heuristic(env.grid, pos1, pos2))
 print("\nPath (Obstacle-aware heuristic):", path)
 print("Total cost (Obstacle-aware heuristic):", cost)
+
+# Visualize the environment and the planned path
+print("\nInitial environment:")
+print_grid(env.grid)
+visualize_path(env.grid, path)
+visualize_grid(env.grid, path)
