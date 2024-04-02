@@ -1,4 +1,3 @@
-# search.py
 from collections import deque
 from pathfinding import manhattan_distance, obstacle_aware_heuristic
 

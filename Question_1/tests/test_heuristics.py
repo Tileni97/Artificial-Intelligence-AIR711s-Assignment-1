@@ -1,4 +1,4 @@
-# test_heuristics.py
+#
 from environment import Environment, OBSTACLE, FLOOR, ROBOT, TARGET
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search

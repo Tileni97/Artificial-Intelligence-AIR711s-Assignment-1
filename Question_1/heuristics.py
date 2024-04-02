@@ -1,4 +1,3 @@
-# heuristics.py
 from environment import OBSTACLE
 
 def manhattan_distance(pos1, pos2):

@@ -1,4 +1,3 @@
-# main.py
 from environment import Environment
 from heuristics import manhattan_distance, obstacle_aware_heuristic
 from search import a_star_search

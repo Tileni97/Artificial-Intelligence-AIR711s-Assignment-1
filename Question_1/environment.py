@@ -1,5 +1,3 @@
-# environment.py
-
 # Define cell states
 OBSTACLE = -1
 FLOOR = 0
