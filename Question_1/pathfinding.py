@@ -5,7 +5,7 @@ def manhattan_distance(pos1, pos2):
     x2, y2 = pos2
     return abs(x1 - x2) + abs(y1 - y2)
 
-def obstacle_aware_heuristic(grid, pos1, pos2, obstacle_penalty=10):
+def obstacle_aware_heuristic(grid, pos1, pos2, obstacle_penalty=15):
     rows, cols = len(grid), len(grid[0])
     x1, y1 = pos1
     x2, y2 = pos2

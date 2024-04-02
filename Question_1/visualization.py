@@ -1,3 +1,4 @@
+# visualization.py
 import matplotlib.pyplot as plt
 
 def print_grid(grid):
