@@ -63,9 +63,9 @@ def visualize_grid(grid, path=None):
 
     # Plot the path if provided
     if path:
-        path_x = [y for x, y in path]  # Extract x-coordinates of the path
-        path_y = [x for x, y in path]  # Extract y-coordinates of the path
-        ax.plot(path_x, path_y, 'b--', linewidth=2)  # Plot the path
+        path_x = [y + 0.5 for x, y in path]  # Extract x-coordinates of the path
+        path_y = [x + 0.5 for x, y in path]  # Extract y-coordinates of the path
+        ax.plot(path_x, path_y, color = 'purple',linestyle = ':', linewidth=5)  # Plot the path
 
     # Set axis ticks and labels
     ax.set_xticks(range(cols))
