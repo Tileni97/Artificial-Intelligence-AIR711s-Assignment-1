@@ -1,5 +1,4 @@
-# visualization.py
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # Import matplotlib for visualization
 
 def print_grid(grid):
     """
@@ -48,9 +47,10 @@ def visualize_grid(grid, path=None):
         grid (list): The grid representing the environment.
         path (list, optional): The planned path for the robot as a list of positions.
     """
-    rows, cols = len(grid), len(grid[0])
-    fig, ax = plt.subplots(figsize=(cols, rows))
+    rows, cols = len(grid), len(grid[0])  # Get the number of rows and columns in the grid
+    fig, ax = plt.subplots(figsize=(cols, rows))  # Create a plot with appropriate size
 
+    # Plot each cell in the grid
     for x in range(rows):
         for y in range(cols):
             cell_value = grid[x][y]
@@ -61,17 +61,16 @@ def visualize_grid(grid, path=None):
             elif cell_value == 2:
                 ax.add_patch(plt.Circle((y + 0.5, x + 0.5), 0.3, facecolor='red'))  # Target
 
+    # Plot the path if provided
     if path:
-        print("Plotting path:", path)  # Added for debugging
-        path_x = [y for x, y in path]
-        path_y = [x for x, y in path]  # Updated to plot correctly
-        print("Path x-coordinates:", path_x)  # Added for debugging
-        print("Path y-coordinates:", path_y)  # Added for debugging
-        ax.plot(path_x, path_y, 'b--', linewidth=2)  # Plot the path
+        path_x = [y + 0.5 for x, y in path]  # Extract x-coordinates of the path
+        path_y = [x + 0.5 for x, y in path]  # Extract y-coordinates of the path
+        ax.plot(path_x, path_y, color = 'purple',linestyle = ':', linewidth=5)  # Plot the path
 
+    # Set axis ticks and labels
     ax.set_xticks(range(cols))
     ax.set_yticks(range(rows))
     ax.set_xticklabels(range(cols))
     ax.set_yticklabels(range(rows))
-    ax.grid()
-    plt.show()
+    ax.grid()  # Add grid lines
+    plt.show()  # Display the plot
